@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .color-red {
+            color: red;
+        }
+        .is-loading {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+        <h1 :class="className">Hello World</h1>
+        <button :class="{'is-loading': isLoading}" @click="toggleClass" :disabled="isDisabled">Toggle Class</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#root",
+            data:  {
+                className: 'color-red',
+                isLoading: true,
+                isDisabled: true
+            },
+            methods: {
+                toggleClass() {
+                    this.isLoading = true;
+                }
+            }
+        });
+
+        
+    </script>
+</body>
+</html>
